@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import "./App.css";
+import { NavLink, Route, Routes } from "react-router-dom";
+import "swiper/css";
+import Main from "./components/layout/Main";
+import Homepage from "./pages/Homepage";
+import Banner from "./components/banner/Banner";
+import Moviespage from "./pages/Moviespage";
+import MoviesDetailPage from "./pages/MoviesDetailPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Routes>
+        <Route element={<Main></Main>}>
+          <Route
+            path="/"
+            element={
+              <>
+                <Banner></Banner>
+                <Homepage></Homepage>
+              </>
+            }
+          ></Route>
+          <Route path="/movies" element={<Moviespage></Moviespage>}></Route>
+          <Route path="/movie/:movieId" element={<MoviesDetailPage></MoviesDetailPage>}></Route>
+        </Route>
+      </Routes>
+    </Fragment>
   );
 }
 

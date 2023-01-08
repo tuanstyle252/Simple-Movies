@@ -1,38 +1,379 @@
-.App {
-  text-align: center;
+:root {
+  --brand-primary: #f62682;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
+  background-color: rgb(15 23 42);
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  column-gap: 20px;
+  color: rgb(255 255 255);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+}
+.header a.active {
+  color: var(--brand-primary);
+}
+.header-menu {
+  color: var(--brand-primary);
+}
+
+.banner {
+  height: 500px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.banner .swiper {
+  height: 100%;
+}
+.banner-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-img-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: top;
+}
+.content {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 100%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.content-namefilm {
+  font: bold;
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
-@keyframes App-logo-spin {
+.content-detail {
+  display: flex;
+  justify-items: center;
+  column-gap: 15px;
+  margin-bottom: 32px;
+}
+
+.content-detail-span {
+  padding: 15px 20px;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+.content-watchnow {
+  padding: 15px 60px;
+  font: medium;
+  font-size: 30px;
+  background-color: var(--brand-primary);
+  border-radius: 9px;
+  color: white;
+  margin-bottom: 20px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  background: linear-gradient(90deg, rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
+  border-radius: 9px;
+}
+
+.movies-namelist {
+  text-transform: capitalize;
+  color: white;
+  font: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movies-layout {
+  padding: 20px;
+  max-height: 1000px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movies-list .swiper-slide {
+  width: 300px;
+  height: auto;
+}
+
+.movies-card {
+  border-radius: 9px;
+  padding: 12px;
+  background-color: rgb(30 41 59);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.movies-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 9px;
+  margin-bottom: 12px;
+}
+.movies-card-title {
+  color: white;
+  font-size: 20px;
+  font: bold;
+  margin-bottom: 9px;
+}
+
+.movies-card-rate {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  color: white;
+  --tw-text-opacity: 0.5;
+  font-size: 14px;
+  line-height: 20p;
+  opacity: 0.5;
+  margin-bottom: 30px;
+}
+.content-watchnow-list {
+  background-color: var(--brand-primary);
+  border-radius: 9px;
+  width: 100%;
+  padding: 15px 20px;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.movies-card-full {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+}
+.movies-page {
+  padding: 0 20px;
+}
+.movies-page-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 36px;
+  
+}
+.search {
+  display: flex;
+  margin-bottom: 20px;
+}
+.search-detail {
+  flex: 1 1 0%;
+}
+.search-input {
+  width: 100%;
+  background-color: rgb(30 41 59);
+  padding: 10px;
+  outline: none;
+  color: white;
+}
+.search-input ::placeholder {
+  font-size: 30px;
+}
+.button1 {
+  padding: 10px;
+  background-color: var(--brand-primary);
+}
+button .icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.overlay-detail img {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* position: relative; */
+}
+
+/* .overlay-banner{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  background: linear-gradient(90deg, rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
+} */
+.after-banner {
+  width: 100%;
+  height: 300px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  padding-bottom: 20px;
+}
+.after-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.original-title {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.genres {
+  display: flex;
+  column-gap: 20px;
+  justify-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+}
+.genres-detail {
+  padding: 20px 40px;
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary);
+}
+.overview {
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.casts-list-img {
+  width: 100%;
+  height: 300px;
+}
+
+.casts-name {
+  color: white;
+}
+
+.casts-title {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: white;
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.main-cast {
+  padding-bottom: 30px;
+}
+
+.movie-trailer-detail {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.movies-trailer-watch {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.similar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.similar-title {
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.loading {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid var(--brand-primary);
+  animation: spin 1s linear infinite;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.paging {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.next {
+  width: 20px;
+}
+
+.page-index {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: white;
+  gap: 20px;
+  list-style: none;
+  cursor: pointer;
+  margin-top: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.selected {
+  color: #f62682;
 }
